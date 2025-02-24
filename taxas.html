@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cálculo de Taxa de Transporte - Regras Organizadas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    label { font-weight: bold; }
+    select { padding: 5px; margin-top: 5px; width: 320px; }
+    button { margin-top: 15px; padding: 8px 15px; font-size: 1rem; }
+    #resultado { margin-top: 20px; font-size: 1.2rem; color: blue; }
+  </style>
+</head>
+<body>
+  <h1>Cálculo da Taxa de Transporte</h1>
+   <h1>Cálculo da Taxa de Transporte</h1>
+  
+  <label for="professor">Bairro do Professor:</label>
+  <select id="professor">
+    <option value="">Selecione o bairro</option>
+    <optgroup label="Baixa da cidade">
+      <option value="kukala">Kukala kiaku</option>
+      <option value="marinha">Marinha</option>
+    </optgroup>
+    <optgroup label="Centro da cidade">
+      <option value="maioA">1º de Maio Zona A</option>
+      <option value="maioB">1º de Maio Zona B</option>
+      <option value="maioC">1º de Maio Zona C</option>
+      <option value="nkulua">Nkulua Nganga</option>
+    </optgroup>
+    <optgroup label="Zona nordeste">
+      <option value="kikudo">Kikudo ou Paróquia</option>
+      <option value="bundila">Bundila ou Mbubu</option>
+      <option value="ilha">Ilha I e II</option>
+    </optgroup>
+    <optgroup label="Zona noroeste">
+      <option value="fapa">Fapa</option>
+      <option value="nkungue">Nkungue yengele</option>
+      <option value="kimbumba">Kimbumba</option>
+      <option value="teixeira">Teixeira ou Projecto Cajueiro</option>
+      <option value="kami">Kami</option>
+      <option value="california">California</option>
+      <option value="kindombele">Kindombele ou Kinuica</option>
+    </optgroup>
+    <optgroup label="Zona Periférica 1">
+      <option value="kintambi">Kintambi</option>
+      <option value="kimpondo">Kimpondo</option>
+      <option value="olo">Olo I e II</option>
+      <option value="kitxitxu">Kitxitxu</option>
+      <option value="tuku">Tuku</option>
+    </optgroup>
+    <optgroup label="Zona Periférica 2">
+      <option value="pungu">Pungu</option>
+      <option value="garra">Garra</option>
+      <option value="ngada">Ngada Soyo</option>
+    </optgroup>
+    <optgroup label="Zona Periferica 3">
+      <option value="mongo">Mongo Soyo</option>
+      <option value="bairrodafina">Bairro da fina</option>
+      <option value="pangala">Pangala</option>
+    </optgroup>
+    <optgroup label="Zona Sul">
+      <option value="kinganga">Kinganga</option>
+      <option value="kitona">Kitona</option>
+      <option value="bairromilitar">Bairro Militar</option>
+    </optgroup>
+  </select>
+  
+  <br><br>
+  
+  <label for="aluno">Bairro do Aluno:</label>
+  <select id="aluno">
+    <option value="">Selecione o bairro</option>
+    <optgroup label="Baixa da cidade">
+      <option value="kukala">Kukala kiaku</option>
+      <option value="marinha">Marinha</option>
+    </optgroup>
+    <optgroup label="Centro da cidade">
+      <option value="maioA">1º de Maio Zona A</option>
+      <option value="maioB">1º de Maio Zona B</option>
+      <option value="maioC">1º de Maio Zona C</option>
+      <option value="nkulua">Nkulua Nganga</option>
+    </optgroup>
+    <optgroup label="Zona nordeste">
+      <option value="kikudo">Kikudo ou Paróquia</option>
+      <option value="bundila">Bundila ou Mbubu</option>
+      <option value="ilha">Ilha I e II</option>
+    </optgroup>
+    <optgroup label="Zona noroeste">
+      <option value="fapa">Fapa</option>
+      <option value="nkungue">Nkungue yengele</option>
+      <option value="kimbumba">Kimbumba</option>
+      <option value="teixeira">Teixeira ou Projecto Cajueiro</option>
+      <option value="kami">Kami</option>
+      <option value="california">California</option>
+      <option value="kindombele">Kindombele ou Kinuica</option>
+    </optgroup>
+    <optgroup label="Zona Periférica 1">
+      <option value="kintambi">Kintambi</option>
+      <option value="kimpondo">Kimpondo</option>
+      <option value="olo">Olo I e II</option>
+      <option value="kitxitxu">Kitxitxu</option>
+      <option value="tuku">Tuku</option>
+    </optgroup>
+    <optgroup label="Zona Periférica 2">
+      <option value="pungu">Pungu</option>
+      <option value="garra">Garra</option>
+      <option value="ngada">Ngada Soyo</option>
+    </optgroup>
+    <optgroup label="Zona Periferica 3">
+      <option value="mongo">Mongo Soyo</option>
+      <option value="bairrodafina">Bairro da fina</option>
+      <option value="pangala">Pangala</option>
+    </optgroup>
+    <optgroup label="Zona Sul">
+      <option value="kinganga">Kinganga</option>
+      <option value="kitona">Kitona</option>
+      <option value="bairromilitar">Bairro Militar</option>
+    </optgroup>
+  </select>
+  
+  <br><br>
+  
+  <button onclick="calcularTaxa()">Calcular Taxa</button>
+  
+  <div id="resultado"></div>
+  <script>
+    function calcularTaxa() {
+      const prof = document.getElementById('professor').value;
+      const aluno = document.getElementById('aluno').value;
+      let taxa = null;
+      
+      if (!prof || !aluno) {
+        alert("Por favor, selecione o bairro para o professor e para o aluno.");
+        return;
+      }
+      
+      // Definição dos grupos
+      const baixa         = ["kukala", "marinha"];
+      const centro        = ["maioA", "maioB", "maioC", "nkulua"];
+      const zonaNordeste  = ["kikudo", "bundila", "ilha"];
+      const zonaNoroeste  = ["fapa", "nkungue", "kimbumba", "teixeira", "kami", "california", "kindombele"];
+      const zonaPerif1    = ["kintambi", "kimpondo", "olo", "kitxitxu", "tuku"];
+      const zonaPerif2    = ["pungu", "garra", "ngada"];
+      const zonaPerif3    = ["mongo", "bairrodafina", "pangala"];
+      const zonaSul       = ["kinganga", "kitona", "bairromilitar"];
+      
+      // Regra 1: Bairros iguais
+      if (prof === aluno) {
+        taxa = 0;
+      }
+      // Regras Baixa vs Baixa
+      else if (baixa.includes(prof) && baixa.includes(aluno)) {
+        taxa = 400;
+      }
+      // Regras Baixa vs Centro
+      else if ((baixa.includes(prof) && centro.includes(aluno)) || (baixa.includes(aluno) && centro.includes(prof))) {
+        const origem = baixa.includes(prof) ? prof : aluno;
+        const destino = centro.includes(prof) ? prof : aluno;
+        
+        if (destino === "maioC") {
+          taxa = (origem === "kukala" || origem === "marinha") ? 1000 : 600;
+        } else if (destino === "nkulua") {
+          taxa = 800;
+        } else { // maioA e maioB
+          taxa = 600;
+        }
+      }
+      // Regras Internas do Centro
+      else if (
+        (prof === "maioA" && aluno === "maioB") || (prof === "maioB" && aluno === "maioA") ||
+        (prof === "maioA" && aluno === "maioC") || (prof === "maioC" && aluno === "maioA") ||
+        (prof === "maioA" && aluno === "nkulua") || (prof === "nkulua" && aluno === "maioA") ||
+        (prof === "maioB" && aluno === "maioC") || (prof === "maioC" && aluno === "maioB")
+      ) {
+        taxa = 400;
+      }
+      else if ((prof === "maioC" && aluno === "nkulua") || (prof === "nkulua" && aluno === "maioC")) {
+        taxa = 500;
+      }
+      // Centro vs Zona Noroeste
+      else if ((centro.includes(prof) && zonaNoroeste.includes(aluno)) || (centro.includes(aluno) && zonaNoroeste.includes(prof))) {
+        const destino = zonaNoroeste.includes(prof) ? prof : aluno;
+        taxa = (destino === "kimbumba") ? 600 : 400;
+      }
+      // Baixa vs Zonas Noroeste/Nordeste/Periféricas/Sul
+      else if ((baixa.includes(prof) && zonaNoroeste.includes(aluno)) || (baixa.includes(aluno) && zonaNoroeste.includes(prof))) {
+        taxa = 1000;
+      }
+      else if ((baixa.includes(prof) && zonaNordeste.includes(aluno)) || (baixa.includes(aluno) && zonaNordeste.includes(prof))) {
+        taxa = 1400;
+      }
+      else if (
+        (baixa.includes(prof) && zonaPerif1.includes(aluno)) || (baixa.includes(aluno) && zonaPerif1.includes(prof)) ||
+        (baixa.includes(prof) && zonaPerif2.includes(aluno)) || (baixa.includes(aluno) && zonaPerif2.includes(prof)) ||
+        (baixa.includes(prof) && zonaPerif3.includes(aluno)) || (baixa.includes(aluno) && zonaPerif3.includes(prof))
+      ) {
+        taxa = 1000;
+      }
+      else if ((baixa.includes(prof) && zonaSul.includes(aluno)) || (baixa.includes(aluno) && zonaSul.includes(prof))) {
+        taxa = 1500;
+      }
+      // Zona Nordeste vs Periféricas/Sul
+      else if (
+        (zonaNordeste.includes(prof) && zonaPerif1.includes(aluno)) || (zonaNordeste.includes(aluno) && zonaPerif1.includes(prof)) ||
+        (zonaNordeste.includes(prof) && zonaPerif2.includes(aluno)) || (zonaNordeste.includes(aluno) && zonaPerif2.includes(prof)) ||
+        (zonaNordeste.includes(prof) && zonaPerif3.includes(aluno)) || (zonaNordeste.includes(aluno) && zonaPerif3.includes(prof))
+      ) {
+        taxa = 800;
+      }
+      else if ((zonaNordeste.includes(prof) && zonaSul.includes(aluno)) || (zonaNordeste.includes(aluno) && zonaSul.includes(prof))) {
+        taxa = 1200;
+      }
+      // Regras Periféricas
+      else if (
+        (zonaPerif1.includes(prof) && zonaPerif1.includes(aluno) && prof !== aluno) ||
+        (zonaPerif2.includes(prof) && zonaPerif2.includes(aluno) && prof !== aluno) ||
+        (zonaPerif3.includes(prof) && zonaPerif3.includes(aluno) && prof !== aluno)
+      ) {
+        taxa = 400;
+      }
+      else if (
+        (zonaPerif1.includes(prof) && zonaPerif2.includes(aluno)) || (zonaPerif1.includes(aluno) && zonaPerif2.includes(prof)) ||
+        (zonaPerif1.includes(prof) && zonaPerif3.includes(aluno)) || (zonaPerif1.includes(aluno) && zonaPerif3.includes(prof))
+      ) {
+        taxa = 400;
+      }
+      // Periféricas vs Sul
+      else if (
+        (zonaPerif1.includes(prof) && zonaSul.includes(aluno)) || (zonaPerif1.includes(aluno) && zonaSul.includes(prof)) ||
+        (zonaPerif2.includes(prof) && zonaSul.includes(aluno)) || (zonaPerif2.includes(aluno) && zonaSul.includes(prof))
+      ) {
+        taxa = 800;
+      }
+      // Regra Zona Sul
+      else if (zonaSul.includes(prof) && zonaSul.includes(aluno) && prof !== aluno) {
+        taxa = 400;
+      }
+      
+      const divResultado = document.getElementById("resultado");
+      divResultado.textContent = taxa !== null 
+        ? `A taxa de transporte é: ${taxa} Kz` 
+        : "Não há uma regra definida para a combinação escolhida.";
+    }
+  </script>
+</body>
+</html>

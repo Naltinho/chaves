@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão e divulgação de perfis de professores domiciliar - Página Inicial</title>
+  <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+  <nav>
+    <div class="logo">
+      <img src="imagens/logo.jpg" alt="Logo" class="logo-img">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="candidaturas.html">Candidaturas</a></li>
+      <li><a href="resultados.html">Resultados</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="dicas.html">Dicas</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="contato.html">Contactos</a></li>
+    </ul>
+    <div class="buttons">
+     <button class="login-btn" onclick="showForm('login')">Login</button>
+  <button class="register-btn" onclick="showForm('register')">Registrar</button>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+</header>
+
+
+
+  <!-- Seção de Introdução -->
+  <section class="intro">
+    <div class="intro-content">
+      <h2>Aprenda no seu ritmo, no conforto da sua casa</h2>
+      <p>Conecte-se com os melhores professores de diversos cursos e tenha aulas personalizadas.</p>
+      <button onclick="scrollToForm()">Quero Saber Mais</button>
+    </div>
+  </section>
+
+ 
+  <!-- Benefícios -->
+<section class="benefits">
+  <div class="benefit">
+    <img src="imagens/pexels-photo-3184300.jpeg" alt="Aulas Personalizadas" class="benefit-img">
+    <h3>Aulas Personalizadas</h3>
+    <p>Aprenda de acordo com o seu ritmo e necessidade, sem pressa e com a atenção que você merece.</p>
+  </div>
+  <div class="benefit">
+    <img src="imagens/pexels-photo-3184299.jpeg" alt="Professores Qualificados" class="benefit-img">
+    <h3>Professores Qualificados</h3>
+    <p>Conecte-se com professores altamente qualificados para ajudá-lo a atingir seus objetivos.</p>
+  </div>
+  <div class="benefit">
+    <img src="imagens/pexels-photo-3184300.jpeg" alt="Flexibilidade" class="benefit-img">
+    <h3>Flexibilidade</h3>
+    <p>Aulas no horário que você escolher, direto da sua casa, sem se preocupar com deslocamentos.</p>
+  </div>
+</section>
+<!-- Pilares da Empresa -->
+<section class="pillars">
+  <div class="pillar">
+    <img src="imagens/missao.png" alt="Missão" class="pillar-icon">
+    <h3>Missão</h3>
+    <p>Proporcionar educação de qualidade de forma personalizada, atendendo às necessidades de cada aluno.</p>
+  </div>
+  <div class="pillar">
+    <img src="imagens/alvo.png" alt="Visão" class="pillar-icon">
+    <h3>Visão</h3>
+    <p>Ser referência nacional no Gestão e divulgação de perfis de professores domiciliar, garantindo excelência no aprendizado e na formação de futuros profissionais.</p>
+  </div>
+  <div class="pillar">
+    <img src="imagens/valor.png" alt="Valores" class="pillar-icon">
+    <h3>Valores</h3>
+    <p>Compromisso, transparência, inovação e respeito à diversidade de cada aluno e profissional envolvido.</p>
+  </div>
+</section>
+
+
+
+<!-- Overlay de fundo -->
+<div id="overlay" class="overlay">
+  <!-- Formulário de Login -->
+  <div class="form-container" id="login-form-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" name="login-email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Senha:</label>
+        <input type="password" id="login-password" name="login-password" required>
+      </div>
+      <button type="submit">Entrar</button>
+      <button type="button" class="close-btn" onclick="closeForm()">Fechar</button>
+    </form>
+  </div>
+
+  <!-- Formulário de Registro -->
+  <div class="form-container" id="register-form-container">
+    <h2>Registro</h2>
+    <form id="register-form">
+      <div class="form-group">
+        <label for="register-name">Nome:</label>
+        <input type="text" id="register-name" name="register-name" required>
+      </div>
+      <div class="form-group">
+        <label for="register-email">Email:</label>
+        <input type="email" id="register-email" name="register-email" required>
+      </div>
+      <div class="form-group">
+        <label for="register-password">Senha:</label>
+        <input type="password" id="register-password" name="register-password" required>
+      </div>
+      <div class="form-group">
+        <label for="register-confirm-password">Confirmar Senha:</label>
+        <input type="password" id="register-confirm-password" name="register-confirm-password" required>
+      </div>
+      <button type="submit">Registrar</button>
+      <button type="button" class="close-btn" onclick="closeForm()">Fechar</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+  <!-- Formulário de Registro 
+  <div class="form-container" id="register-form-container">
+    <h2>Registro</h2>
+    <form id="register-form">
+      <div class="form-group">
+        <label for="register-name">Nome:</label>
+        <input type="text" id="register-name" name="register-name" required>
+      </div>
+      <div class="form-group">
+        <label for="register-email">Email:</label>
+        <input type="email" id="register-email" name="register-email" required>
+      </div>
+      <div class="form-group">
+        <label for="register-password">Senha:</label>
+        <input type="password" id="register-password" name="register-password" required>
+      </div>
+      <div class="form-group">
+        <label for="register-confirm-password">Confirmar Senha:</label>
+        <input type="password" id="register-confirm-password" name="register-confirm-password" required>
+      </div>
+      <button type="submit">Registrar</button>
+      <button type="button" class="close-btn" onclick="closeForm()">Fechar</button>
+    </form>
+  </div>
+</div>
+
+
+-->
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Gestão e divulgação de perfis de professores domiciliar. Todos os direitos reservados.</p>
+    <div class="social-media">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+</body>
+</html>

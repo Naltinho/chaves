@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - EduTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="noticias.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+     <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="imagens/logo.jpg" alt="Logo" class="logo-img">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="candidaturas.html">Candidaturas</a></li>
+        <li><a href="resultados.html">Resultados</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="dicas.html">Dicas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contactos</a></li>
+      </ul>
+      <div class="buttons">
+     <button class="login-btn" onclick="showForm('login')">Login</button>
+  <button class="register-btn" onclick="showForm('register')">Registrar</button>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+  </header>
+
+
+    <!-- Breaking News Banner -->
+    <div class="breaking-news">
+        <span class="breaking-label">Breaking News:</span>
+        <span class="news-text">Fique por dentro das últimas notícias sobre educação e oportunidades de trabalho.</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Featured News -->
+        <section class="featured-news">
+            <article class="main-article">
+                <h1>Processo de Candidatura de Professores domiciliares</h1>
+                <div class="article-meta">
+                    <span class="date">Publicado em: 05 Março 2024</span>
+                    <span class="category">Categoria: Vagas</span>
+                </div>
+                <div class="article-content">
+                    <p>A Direção Municipal da Educação do Soyo "DMES" vem, por este meio, tornar público que estão abertas as candidaturas para professores domiciliares no Soyo, referente ao ano académico 2024/2025.</p>
+
+                    <h2>Requisitos:</h2>
+                    <ul>
+                        <li>Ser técnico médio no mínimo</li>
+                        <li>Possuir agregação pedagógica ou experiência profissional</li>
+                        <li>Domínio da língua portuguesa</li>
+                        <li>Ter nacionalidade angolana</li>
+                    </ul>
+
+                    <h2>Documentos necessários:</h2>
+                    <ul>
+                        <li>Uma foto tipo passe</li>
+                        <li>Fotocópia do bilhete de identidade</li>
+                        <li>Certificado de habilitações literárias com notas discriminadas do II Ciclo do Ensino Secundário</li>
+                        <li>CV</li>
+                        <li>Outras certicações</li>
+                    </ul>
+
+                    <h2>Fases do Processo de Candidatura</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>1ª fase: Apresentação das candidaturas</h3>
+                            <p>De 08 a 31 de Outubro 2024</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>2ª fase: Verificação e análise documental</h3>
+                            <p>De 01 a 31 de Outubro de 2024</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>3ª fase: Pré-selecção</h3>
+                            <p>De 01 a 08 de Novembro 2024</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>4ª fase: Publicação dos resultados pré-seleccionados</h3>
+                            <p>12 de Novembro de 2024</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>5ª fase: Realização das entrevistas</h3>
+                            <p>A partir de 23 de Dezembro de 2024</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>6ª fase: Assinatura do contrato de BEI</h3>
+                            <p>De 18 de Novembro a 18 Dezembro de 2024</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>7ª fase: Publicação dos resultados finais</h3>
+                            <p>12 de Novembro de 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Related News Sidebar -->
+        <aside class="related-news">
+            <h2>Notícias Relacionadas</h2>
+            <div class="news-card">
+                <img src="imagens/pexels-photo-5212324.jpeg" alt="Educação">
+                <div class="news-info">
+                    <h3>Novas Oportunidades na Educação</h3>
+                    <p>Confira as últimas vagas disponíveis para professores...</p>
+                    <span>15 Minutos atrás</span>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="imagens/pexels-photo-5905709.jpeg" alt="Professores">
+                <div class="news-info">
+                    <h3>Programa de Formação Continuada</h3>
+                    <p>Professores terão acesso a novos cursos de capacitação...</p>
+                    <span>30 Minutos atrás</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html> 

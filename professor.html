@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Professor</title>
+    <link rel="stylesheet" href="professor.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+          <div class="logo">
+            <img src="imagens/logo.jpg" alt="Logo" class="logo-img">
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="candidaturas.html">Candidaturas</a></li>
+            <li><a href="resultados.html">Resultados</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="./aluno/dicas.html">Dicas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contactos</a></li>
+          </ul>
+          <div class="buttons">
+       
+        </nav>
+      </header>
+
+    <!-- Perfil do Professor -->
+    <section class="professor-profile">
+        <div class="profile-header">
+            <div class="profile-cover"></div>
+            <div class="profile-info">
+                <img src="imagens/pexels-photo-5212324.jpeg" alt="Foto do Professor" class="profile-photo">
+                <h1>Prof. João Silva</h1>
+                <p class="disciplina">Professor de Matemática</p>
+                <div class="badges">
+                    <span>Doutor em Educação</span>
+                    <span>15 anos de experiência</span>
+                    <span>Especialista em Ensino</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sobre o Professor -->
+        <section class="about-professor">
+            <div class="container">
+                <h2>Sobre o Professor</h2>
+                <p>Professor dedicado com mais de 15 anos de experiência no ensino de matemática. Especialista em tornar conceitos complexos acessíveis e interessantes para todos os alunos.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>1500+</h3>
+                        <p>Alunos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>95%</h3>
+                        <p>Aprovação</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>Aulas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodologia -->
+        <section class="methodology">
+            <div class="container">
+                <h2>Metodologia de Ensino</h2>
+                <div class="method-cards">
+                    <div class="method-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Aprendizado Ativo</h3>
+                        <p>Foco em exercícios práticos e resolução de problemas reais.</p>
+                    </div>
+                    <div class="method-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Atenção Individual</h3>
+                        <p>Acompanhamento personalizado do progresso de cada aluno.</p>
+                    </div>
+                    <div class="method-card">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Recursos Digitais</h3>
+                        <p>Utilização de tecnologia e recursos interativos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horários Disponíveis -->
+        <section class="schedule">
+            <div class="container">
+                <h2>Horários Disponíveis</h2>
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <h3>Segunda-feira</h3>
+                        <p>08:00 - 10:00</p>
+                        <p>14:00 - 16:00</p>
+                        <button class="schedule-btn">Agendar</button>
+                    </div>
+                    <div class="schedule-card">
+                        <h3>Quarta-feira</h3>
+                        <p>10:00 - 12:00</p>
+                        <p>16:00 - 18:00</p>
+                        <button class="schedule-btn">Agendar</button>
+                    </div>
+                    <div class="schedule-card">
+                        <h3>Sexta-feira</h3>
+                        <p>09:00 - 11:00</p>
+                        <p>15:00 - 17:00</p>
+                        <button class="schedule-btn">Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Avaliações -->
+        <section class="reviews">
+            <div class="container">
+                <h2>Avaliações dos Alunos</h2>
+                <div class="review-cards">
+                    <div class="review-card">
+                        <img src="imagens/pexels-photo-3777943.jpeg" alt="Aluno">
+                        <h4>Maria Santos</h4>
+                        <div class="stars">★★★★★</div>
+                        <p>"Excelente professor! Metodologia clara e objetiva."</p>
+                    </div>
+                    <div class="review-card">
+                        <img src="imagens/pexels-photo-3777946.jpeg" alt="Aluno">
+                        <h4>Pedro Oliveira</h4>
+                        <div class="stars">★★★★★</div>
+                        <p>"Consegui entender matemática como nunca antes!"</p>
+                    </div>
+                    <div class="review-card">
+                        <img src="imagens/pexels-photo-3777946.jpeg" alt="Aluno">
+                        <h4>Ana Lima</h4>
+                        <div class="stars">★★★★★</div>
+                        <p>"Aulas dinâmicas e muito bem explicadas."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="contact" id="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <div class="contact-content">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Nome" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea placeholder="Mensagem" required></textarea>
+                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                    </form>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>professor@aulafacil.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>(+244) 935 956 775</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html> 
